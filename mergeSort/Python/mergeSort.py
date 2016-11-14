@@ -40,10 +40,7 @@ class mergeSort():
                 merged=[]
                 
                 while (len(_listL) > 0 and len(_listR) > 0):
-                    if(_listL[0] == None):
-                        merged.append(_listR.pop(0))
-                        _listL.pop(0)
-                    elif(_listL[0]>=_listR[0]):
+                    if(_listL[0]>=_listR[0]):
                         merged.append(_listR.pop(0))
                     else:
                         merged.append(_listL.pop(0))
