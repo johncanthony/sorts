@@ -1,38 +1,34 @@
 class countSort():
 
     def run_sort(self,_list):
-       
-        c_length=self.get_c_length(_list)
-        c_list = build_c_list(c_length)
-        c_prime = build_c_list(c_length)
+        """ Sort list of positive integers using the countSort Algorithm"""
+        _sorted = [0] * len(_list) #Build empty sorted list
+        c_length = max(_list) + 1  #Find Max number in list and add 1
+        c_list = [0] * c_length    #Build empty c list 
 
-        count = 0
 
-        for each in _list:
-            if (c_list[each] == 'a'):
-                c_list[each] = 1
-            c_list[each] += 1
+        """ Populate c list from provided unsorted list"""
+        for number in _list:
+            c_list[number] += 1
 
             
-            
+        c_list   = self.run_c_prime(c_list)
 
-        return _list 
-
-    def get_c_length(self,_list):
-        """ Get the length of the C list and take into account negative numbers """ 
-        max_num = 0
-        min_num = 0
-
+        """ Populate sorted list"""
         for each in _list:
-            if each > max_num:
-                max_num = each 
-            if each < min_num:
-                min_num = each
+            _sorted[c_list[each]-1]= each
+            c_list[each]-=1
 
-        return max_num + abs(min_num) 
 
-    def build_c_list(self,c_length):
-        """ Build list of 'a' from length of c list """
-        c_list = ['a'] * c_length
+        return _sorted
+
+
+    def run_c_prime(self,c_list):
+        """ Build C` list by summing the x and x-1 elements of the list """
+        for i in range(1,len(c_list)):
+            c_list[i] = c_list[i-1] + c_list [i]
 
         return c_list
+
+
+
