@@ -1,3 +1,13 @@
+###########################################################
+#  countSort()
+#
+#  johncanthony  11.19.16
+#
+#  Desc:
+#   Implementaiton of countSort for algorithms study
+#
+###########################################################
+
 class countSort():
 
     def run_sort(self,_list):
