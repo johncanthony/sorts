@@ -1,3 +1,13 @@
+###########################################################
+#  insertSort()
+#
+#  johncanthony  11.13.16
+#
+#  Desc:
+#   Implementaiton of recursive bubbleSort for algorithms study
+#
+###########################################################
+
 class sorts(object):
      @staticmethod
      def bubbleSort (array, swaps):
